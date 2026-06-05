@@ -10,6 +10,8 @@
 YukkuriMovieMaker4（YMM4）上で動作する、**画像内の同形状領域を自動検出してブラシで塗りつぶす映像エフェクトプラグイン**です。
 HLSL ピクセルシェーダーを Direct2D カスタムエフェクトとして実装しており、GPU 上でのリアルタイムレンダリングが可能です。
 指定座標のピクセル色を基準にした色許容範囲フィルタリングと、ログ極座標ヒストグラムによる形状特徴量を用いた類似形状マッチングにより、対象と同形の領域を一括で塗りつぶします。
+
+![Image](https://github.com/routersys/YMM4-FillSametype/blob/main/docs/FillSametype.png)
  
 ---
  
