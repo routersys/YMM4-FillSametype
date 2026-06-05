@@ -73,12 +73,17 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="ComputeSharp" Version="3.2.0" />
 		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.142" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\YukkuriMovieMaker.Generator\YukkuriMovieMaker.Generator\YukkuriMovieMaker.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 		<AdditionalFiles Include="**/*.csv" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Shaders\" />
 	</ItemGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
