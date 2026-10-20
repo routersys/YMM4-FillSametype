@@ -122,11 +122,11 @@ ComputeSharp を用いた GPU シェーダー群が処理を担います。
  
 #### `LogPolarHistogramShader`
  
-各前景ピクセルについて、所属成分の重心からの距離・角度を計算し、角度方向 36 ビン × 半径方向 12 ビン（合計 432 次元）の 2D ヒストグラムに加算します。半径方向は `log(r) × logRadiusScale` による対数スケールを使用し、スケール変化への頑健性を高めています。重心からの距離が 1.0 未満のピクセルはビン計算を行いません（`log(r)` の発散回避のため）。`logRadiusScale` は画像対角線長の log 値から算出されます。
+各前景ピクセルについて、所属成分の重心からの距離・角度を計算し、角度方向 36 ビン × 半径方向 12 ビン（合計 432 次元）の 2D ヒストグラムに加算します。半径方向は$\log(r) \times \mathrm{logRadiusScale}$による対数スケールを使用し、スケール変化への頑健性を高めています。重心からの距離が 1.0 未満のピクセルはビン計算を行いません（$\log(r)$ の発散回避のため）。$\mathrm{logRadiusScale}$ は画像対角線長の log 値から算出されます。
  
-```
-logRadiusScale = RadialBins / log(sqrt(width² + height²))
-```
+$$
+\mathrm{logRadiusScale} = \frac{\mathrm{RadialBins}}{\log\sqrt{\mathrm{width}^2 + \mathrm{height}^2}}
+$$
  
 #### `NormalizeHistogramShader`
  
